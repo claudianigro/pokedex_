@@ -1,7 +1,8 @@
 from django.db import models
-
+import uuid
 class Pokemon(models.Model):
-    nome = models.CharField(max_length = 200)
-    tipo = models.CharField(max_length = 50)
-    is_owned = models.BooleanField(default = True)
+    name = models.CharField(max_length = 50, unique = True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    pokedex_id = models.IntegerField()
+
 

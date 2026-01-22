@@ -20,6 +20,4 @@ from pokemon import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pokemon/list/', views.pokemon_list),
-    path('pokemon/add/', views.add_pokemon)
-]
+    path('pokemon/', include("pokedir.urls")
